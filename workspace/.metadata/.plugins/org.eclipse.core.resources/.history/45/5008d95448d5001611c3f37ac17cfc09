@@ -1,0 +1,47 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class Main1 
+{
+	public static void main(String[] args) throws Exception
+	{
+		getConnection();
+	}
+	
+	public static void createTable() throws Exception
+	{
+		try
+		{
+			Connection con = getConnection();
+			PreparedStatement create = con.prepareStatement("CREATE A TABLE IF NOT EXISTS tablename(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255), PRIMARY KEY(id))");
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public static Connection getConnection() throws Exception
+	{
+
+		try
+		{
+			String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+			//String url = "jdbc:sqlserver://192.168.1.101:1433;SQLEXPRESS/Interview";
+			//String username = "sa";
+			//String password = "avinash24";
+			Class.forName(driver);
+		
+			Connection conn = DriverManager.getConnection("jdbc:sqlserver://192.168.1.101:1433;username = sa; password ={avinash24}");
+			System.out.println("Connected");
+			return conn;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return null;
+	}
+
+}

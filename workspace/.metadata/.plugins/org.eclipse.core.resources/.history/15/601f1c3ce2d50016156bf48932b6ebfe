@@ -1,0 +1,27 @@
+package database;
+
+public class CATEGORY
+{
+	private String CATEGORY_ID;
+	public String getCATEGORY_ID() {
+		return CATEGORY_ID;
+	}
+	public CATEGORY() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public void setCATEGORY_ID(String cATEGORY_ID) {
+		CATEGORY_ID = cATEGORY_ID;
+	}
+	
+	private String CATEGORY_NAME;
+	public String getCATEGORY_NAME() {
+		return CATEGORY_NAME;
+	}
+	public void setCATEGORY_NAME(String cATEGORY_NAME) {
+		CATEGORY_NAME = cATEGORY_NAME;
+	}
+	public String toString(){
+		return CATEGORY_ID+""+CATEGORY_NAME;
+	}
+}

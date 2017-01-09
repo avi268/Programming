@@ -1,0 +1,43 @@
+package database;
+ 
+import org.springframework.context.ApplicationContext;  
+import org.springframework.context.support.ClassPathXmlApplicationContext;  
+import database.Data;
+
+
+
+public class Mainclass {  
+  
+public static void main(String[] args) {  
+    ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");  
+      
+    Data d=(Data)ctx.getBean("dbo");  
+    //int status=d.saveData(new Data(102,"Amit",35000));   
+    //System.out.println(status);  
+    
+    int query = d.saveCATEGORY(new CATEGORY("CID1","POP"));
+    System.out.println(query);
+    
+    int query1 = d.saveVIDEO(new VIDEO("V1","VID1","CID3");
+    System.out.println(query1);
+    
+    int query2 = d.saveCHANNEL(new CHANNEL("A","Q1","VID","CID3"));
+    System.out.println(query2);
+    
+    int query3 = d.savePLAYLIST(new PLAYLIST("PD1","P1","VID1","Q3"));
+    System.out.println(query3);
+    
+    
+          
+    /*int status=dao.updateEmployee(new Employee(102,"Sonoo",15000)); 
+    System.out.println(status); 
+    */  
+          
+    /*Employee e=new Employee(); 
+    e.setId(102); 
+    int status=dao.deleteEmployee(e); 
+    System.out.println(status);*/  
+      
+}  
+  
+}  
